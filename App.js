@@ -3,10 +3,25 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+<NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{
+          title: "Página inicial"
+        }}
+        />
+        <Stack.Screen
+        name="Contact"
+        component={Contact}
+        options={{
+          title: "Informações de contato"
+        }}
+        />
+        <Stack
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
