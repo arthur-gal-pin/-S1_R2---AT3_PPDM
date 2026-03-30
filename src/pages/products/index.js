@@ -1,17 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { FontAwesome, AntDesign, MaterialIcons } from "@expo/vector-icons";
-import { TextInput } from 'react-native/types_generated/index';
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function Products() {
+  const navigation = useNavigation();
+
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollview}>
         <View style={styles.produto}>
           <Image
-            source={require('../../assets/switch.png')}
+            source={require('../../../assets/switch.png')}
             style={styles.imagemProduto}
           />
 
@@ -24,7 +26,7 @@ export default function Products() {
           </View>
 
           <View style={styles.quantidadeContainer}>
-            <Text>Qtd:</Text>
+            <Text style={{color: 'white'}}>Qtd:</Text>
             <TextInput
               style={styles.input}
               placeholder='0'
@@ -42,7 +44,7 @@ export default function Products() {
         </View>
         <View style={styles.produto}>
           <Image
-            source={require('../../assets/retro-cyberdeck-v0-vx0uypshe9lc1.png')}
+            source={require('../../../assets/retro-cyberdeck-v0-vx0uypshe9lc1.png')}
             style={styles.imagemProduto}
           />
 
@@ -55,7 +57,7 @@ export default function Products() {
           </View>
 
           <View style={styles.quantidadeContainer}>
-            <Text>Qtd:</Text>
+            <Text>Qtd: style={{color: 'white'}}</Text>
             <TextInput
               style={styles.input}
               placeholder='0'
@@ -73,7 +75,7 @@ export default function Products() {
         </View>
         <View style={styles.produto}>
           <Image
-            source={require('../../assets/caboderede.png')}
+            source={require('../../../assets/caboderede.png')}
             style={styles.imagemProduto}
           />
 
@@ -86,7 +88,7 @@ export default function Products() {
           </View>
 
           <View style={styles.quantidadeContainer}>
-            <Text>Qtd:</Text>
+            <Text style={{color: 'white'}}>Qtd:</Text>
             <TextInput
               style={styles.input}
               placeholder='0'
@@ -104,7 +106,7 @@ export default function Products() {
         </View>
         <View style={styles.produto}>
           <Image
-            source={require('../../assets/raspberryPi.png')}
+            source={require('../../../assets/raspberryPi.png')}
             style={styles.imagemProduto}
           />
 
@@ -117,7 +119,7 @@ export default function Products() {
           </View>
 
           <View style={styles.quantidadeContainer}>
-            <Text>Qtd:</Text>
+            <Text style={{color: 'white'}}>Qtd:</Text>
             <TextInput
               style={styles.input}
               placeholder='0'
@@ -135,7 +137,7 @@ export default function Products() {
         </View>
         <View style={styles.produto}>
           <Image
-            source={require('../../assets/thinkpad.png')}
+            source={require('../../../assets/thinkpad.png')}
             style={styles.imagemProduto}
           />
 
@@ -148,7 +150,7 @@ export default function Products() {
           </View>
 
           <View style={styles.quantidadeContainer}>
-            <Text>Qtd:</Text>
+            <Text style={{color: 'white'}}>Qtd:</Text>
             <TextInput
               style={styles.input}
               placeholder='0'
@@ -172,111 +174,103 @@ export default function Products() {
 
 
 
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#111F24', // Abyssal Teal
-    },
-    header: {
-      padding: 15,
-      borderBottomWidth: 1,
-      borderBottomColor: '#00FF41',
-      backgroundColor: '#111F24',
-      alignItems: 'center',
-    },
-    headerText: {
-      color: '#00FF41', 
-      fontSize: 12,
-      fontWeight: 'bold',
-      letterSpacing: 2,
-      fontFamily: 'monospace', 
-    },
-    scrollview: {
-      flex: 1,
-    },
-    produto: {
-      backgroundColor: 'rgba(122, 129, 140, 0.05)', 
-      margin: 15,
-      borderRadius: 2, 
-      borderWidth: 1,
-      borderColor: '#593F2B', 
-      overflow: 'hidden',
-      paddingBottom: 15,
-    },
-    imagemProduto: {
-      width: '100%',
-      height: 200,
-      resizeMode: 'cover',
-      backgroundColor: '#000',
-      opacity: 0.8,
-    },
-    infoContainer: {
-      padding: 15,
-    },
-    titulo: {
-      color: '#00FF41',
-      fontSize: 18,
-      fontWeight: 'bold',
-      fontFamily: 'monospace',
-      marginBottom: 5,
-    },
-    preco: {
-      color: '#7A818C',
-      fontSize: 16,
-      fontFamily: 'monospace',
-      textDecorationLine: 'line-through',
-      marginBottom: 2,
-    },
-    containerPix: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      marginBottom: 15,
-    },
-    Pix: {
-      color: '#FFF',
-      fontSize: 18,
-      fontWeight: 'bold',
-      fontFamily: 'monospace',
-    },
-    quantidadeContainer: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      marginBottom: 20,
-      borderTopWidth: 1,
-      borderTopColor: 'rgba(89, 63, 43, 0.3)',
-      paddingTop: 10,
-    },
-    label: {
-      color: '#7A818C',
-      fontFamily: 'monospace',
-      marginRight: 10,
-    },
-    input: {
-      backgroundColor: '#000',
-      borderWidth: 1,
-      borderColor: '#00FF41',
-      color: '#00FF41',
-      paddingHorizontal: 10,
-      width: 60,
-      height: 30,
-      fontFamily: 'monospace',
-    },
-    botaoCarrinho: {
-      backgroundColor: '#00FF41', 
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: 15,
-      gap: 10,
-      shadowColor: '#00FF41',
-      shadowOffset: { width: 0, height: 0 },
-      shadowOpacity: 0.5,
-      shadowRadius: 10,
-    },
-    textoBotao: {
-      color: '#111F24',
-      fontWeight: 'bold',
-      fontFamily: 'monospace',
-      letterSpacing: 1,
-    },
-  });
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#000000',
+  },
+  header: {
+    padding: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#00FF41',
+    backgroundColor: '#111F24',
+    alignItems: 'center',
+  },
+  headerText: {
+    color: '#00FF41',
+    fontSize: 12,
+    fontWeight: 'bold',
+    fontFamily: 'monospace',
+  },
+  scrollview: {
+    flex: 1,
+  },
+  produto: {
+    backgroundColor: 'rgba(122, 129, 140, 0.05)',
+    margin: 15,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#593F2B',
+    paddingBottom: 15,
+  },
+  imagemProduto: {
+    width: '100%',
+    height: 200,
+    resizeMode: 'cover',
+    backgroundColor: '#000',
+    opacity: 0.8,
+  },
+  infoContainer: {
+    padding: 15,
+  },
+  titulo: {
+    color: '#00FF41',
+    fontSize: 18,
+    fontWeight: 'bold',
+    fontFamily: 'monospace',
+    marginBottom: 5,
+  },
+  preco: {
+    color: '#7A818C',
+    fontSize: 16,
+    fontFamily: 'monospace',
+    textDecorationLine: 'line-through',
+    marginBottom: 2,
+  },
+  containerPix: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 15,
+  },
+  Pix: {
+    color: '#FFF',
+    fontSize: 18,
+    fontWeight: 'bold',
+    fontFamily: 'monospace',
+  },
+  quantidadeContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+    borderTopWidth: 1,
+    paddingTop: 10,
+  },
+  label: {
+    color: '#7A818C',
+    fontFamily: 'monospace',
+    marginRight: 10,
+  },
+  input: {
+    backgroundColor: '#000',
+    borderWidth: 1,
+    borderColor: '#00FF41',
+    color: '#00FF41',
+    paddingHorizontal: 10,
+    width: 60,
+    height: 30,
+    fontFamily: 'monospace',
+  },
+  botaoCarrinho: {
+    backgroundColor: '#00FF41',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 15,
+    gap: 10,
+  },
+  textoBotao: {
+    color: '#111F24',
+    fontWeight: 'bold',
+    fontFamily: 'monospace',
+  },
+});

@@ -12,7 +12,7 @@ export default function Home() {
             <StatusBar style="light" />
             
             <Image 
-                source={require('../../assets/Gemini_Generated_Image_b8rw5ib8rw5ib8rw (1).png')} 
+                source={require('../../../assets/Gemini_Generated_Image_b8rw5ib8rw5ib8rw (1).png')} 
                 style={styles.logo} 
                 resizeMode="contain"
             />
