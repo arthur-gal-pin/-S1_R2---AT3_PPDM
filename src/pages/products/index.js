@@ -57,7 +57,7 @@ export default function Products() {
           </View>
 
           <View style={styles.quantidadeContainer}>
-            <Text>Qtd: style={{color: 'white'}}</Text>
+            <Text style={{color: 'white'}}>Qtd: </Text>
             <TextInput
               style={styles.input}
               placeholder='0'
